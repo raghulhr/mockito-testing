@@ -2,7 +2,6 @@ package com.alaigal.mockitotesting.controller;
 
 import com.alaigal.mockitotesting.model.Movie;
 import com.alaigal.mockitotesting.service.MovieService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,8 +12,7 @@ public class MovieController {
 
     private MovieService movieService;
 
-    @Autowired
-    public void setMovieService(MovieService movieService){
+    public MovieController(MovieService movieService) {
         this.movieService = movieService;
     }
 
