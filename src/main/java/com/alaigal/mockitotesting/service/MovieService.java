@@ -2,7 +2,6 @@ package com.alaigal.mockitotesting.service;
 
 import com.alaigal.mockitotesting.model.Movie;
 import com.alaigal.mockitotesting.repository.MovieRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -15,10 +14,10 @@ public class MovieService {
 
     private MovieRepository movieRepository;
 
-    @Autowired
-    public void setMovieRepository(MovieRepository movieRepository){
+    public MovieService(MovieRepository movieRepository) {
         this.movieRepository = movieRepository;
     }
+
 
     public Movie postMovie(Movie movie) {
         return movieRepository.save(movie);
